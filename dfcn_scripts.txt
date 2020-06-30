@@ -1,0 +1,6 @@
+sudo ln -s /python-virtual-environments/pointscnn/lib/python3.6/site-packages/tensorflow/libtensorflow_framework.so.1 /usr/lib/libtensorflow_framework.so
+
+ln -s cuda-9.0 cuda
+
+check cudnn version
+cat /usr/include/cudnn.h | grep CUDNN_MAJOR -A 2
