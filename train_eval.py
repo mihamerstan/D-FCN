@@ -281,12 +281,12 @@ def get_batch_wdp(dataset, batch_idx):
 import pickle as pickle
 import numpy as np
 
-# train_f = open('./Data/train_merge_min_norm_fea.pickle', 'rb')
+train_f = open('Data/train_merge_min_norm_fea.pickle', 'rb')
 train_xyz, train_label, train_feats = pickle.load(train_f, encoding='bytes')
-# train_xyz, train_label, train_feats = pickle.load(train_f)
+train_xyz, train_label, train_feats = pickle.load(train_f)
 train_f.close()
 
-test_f = open('./Data/test_merge_min_norm_fea_paper_height.pickle', 'rb')
+test_f = open('Data/test_merge_min_norm_fea_paper_height.pickle', 'rb')
 test_xyz, test_label, test_feats = pickle.load(test_f, encoding='bytes')
 test_feats = [tt[:,1:2] for tt in test_feats] #reflectance
 test_f.close()
@@ -294,7 +294,7 @@ test_f.close()
 NUM_CLASSES = 9
 label_values = range(NUM_CLASSES)
 
-trainSet = np.loadtxt('./Data/train_height.pts',skiprows=1)
+trainSet = np.loadtxt('Data/train_height.pts',skiprows=1)
 
 label_w = trainSet[:,4].astype('uint8')
 trainSet[:,3] = trainSet[:,3]/trainSet[:,3].max() #height above ground
